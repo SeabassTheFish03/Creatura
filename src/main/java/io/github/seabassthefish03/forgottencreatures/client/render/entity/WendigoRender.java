@@ -7,13 +7,13 @@ import net.minecraft.client.renderer.entity.EntityRendererManager;
 import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.util.ResourceLocation;
 
-public class WendigoRender extends MobRenderer<Wendigo, WendigoModel<Wendigo>>{
+public class WendigoRender extends MobRenderer<Wendigo, WendigoModel>{
 	
 	protected static final ResourceLocation TEXTURE = new ResourceLocation(ForgottenCreatures.MODID,
 			"textures/entities/wendigo.png");
 	
 	public WendigoRender(EntityRendererManager renderManagerIn) {
-		super(renderManagerIn, new WendigoModel<Wendigo>(), 0.5F);
+		super(renderManagerIn, new WendigoModel(), 0.5F);
 	}
 	
 	@Override

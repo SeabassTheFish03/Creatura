@@ -6,14 +6,14 @@ import com.mojang.blaze3d.vertex.IVertexBuilder;
 import io.github.seabassthefish03.forgottencreatures.common.entities.Wendigo;
 import net.minecraft.client.renderer.entity.model.EntityModel;
 import net.minecraft.client.renderer.model.ModelRenderer;
-import net.minecraft.entity.Entity;
+import net.minecraft.util.math.MathHelper;
 
 // Made with Blockbench 3.7.5
 // Exported for Minecraft version 1.15
 // Paste this class into your mod and generate all required imports
 
 
-public class WendigoModel<T extends Wendigo> extends EntityModel<T> {
+public class WendigoModel extends EntityModel<Wendigo> {
 	private final ModelRenderer Body;
 	private final ModelRenderer Legs;
 	private final ModelRenderer Arms;
@@ -55,25 +55,16 @@ public class WendigoModel<T extends Wendigo> extends EntityModel<T> {
 	@Override
 	public void render(MatrixStack matrixStackIn, IVertexBuilder bufferIn, int packedLightIn, int packedOverlayIn,
 			float red, float green, float blue, float alpha) {
-		
-	}
-	
-	public ModelRenderer getBody() {
-		return this.Body;
-	}
-	public ModelRenderer getArms() {
-		return this.Arms;
-	}
-	public ModelRenderer getLegs() {
-		return this.Legs;
-	}
-	public ModelRenderer getHead() {
-		return this.Head;
+		Body.render(matrixStackIn, bufferIn, packedLightIn, packedOverlayIn);
 	}
 
 	@Override
-	public void setRotationAngles(T entityIn, float limbSwing, float limbSwingAmount, float ageInTicks,
+	public void setRotationAngles(Wendigo entityIn, float limbSwing, float limbSwingAmount, float ageInTicks,
 			float netHeadYaw, float headPitch) {
-		
+		Body.rotationPointY = 8.0f + 1.5f * MathHelper.sin(ageInTicks / 20.0f * (float)Math.PI);
+		Body.rotateAngleX = (float)Math.toRadians(MathHelper.clamp(
+			10.0f * (float)entityIn.getMotion().mul(1, 0, 1).length() / 0.3f,
+			-10.0f, 10.0f
+		));
 	}
 }

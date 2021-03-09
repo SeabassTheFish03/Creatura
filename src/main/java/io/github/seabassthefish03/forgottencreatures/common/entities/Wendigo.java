@@ -1,18 +1,10 @@
 package io.github.seabassthefish03.forgottencreatures.common.entities;
 
-import java.util.UUID;
-
-import io.github.seabassthefish03.forgottencreatures.core.init.EntityTypeInit;
 import net.minecraft.entity.CreatureAttribute;
-import net.minecraft.entity.CreatureEntity;
 import net.minecraft.entity.EntityType;
-import net.minecraft.entity.MobEntity;
 import net.minecraft.entity.ai.attributes.Attribute;
-import net.minecraft.entity.ai.attributes.AttributeModifierManager;
 import net.minecraft.entity.ai.attributes.AttributeModifierMap;
 import net.minecraft.entity.ai.attributes.Attributes;
-import net.minecraft.entity.ai.attributes.ModifiableAttributeInstance;
-import net.minecraft.entity.ai.goal.EatGrassGoal;
 import net.minecraft.entity.ai.goal.LookAtGoal;
 import net.minecraft.entity.ai.goal.LookRandomlyGoal;
 import net.minecraft.entity.ai.goal.PanicGoal;
@@ -20,7 +12,6 @@ import net.minecraft.entity.ai.goal.SwimGoal;
 import net.minecraft.entity.ai.goal.WaterAvoidingRandomWalkingGoal;
 import net.minecraft.entity.effect.LightningBoltEntity;
 import net.minecraft.entity.monster.MonsterEntity;
-import net.minecraft.entity.passive.AnimalEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
@@ -30,15 +21,11 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 public class Wendigo extends MonsterEntity {
 	
 	private int timer;
-	private AttributeModifierManager attributes;
-	private AttributeModifierMap attributeMap;
 
 	
 	public Wendigo(EntityType<Wendigo> type, World worldIn) {
 		super(type, worldIn);
 		registerGoals();
-		this.attributeMap = createAttributes();
-		this.attributes = new AttributeModifierManager(this.attributeMap);
 	}
 
 	@Override
@@ -83,11 +70,6 @@ public class Wendigo extends MonsterEntity {
 	@Override
 	public double getBaseAttributeValue(Attribute attribute) {
 	      return this.getAttributeManager().getAttributeBaseValue(attribute);
-	}
-	
-	@Override
-	public AttributeModifierManager getAttributeManager() {
-	      return this.attributes;
 	}
 	
 	@Override
