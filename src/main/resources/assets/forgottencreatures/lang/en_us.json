@@ -1,3 +1,7 @@
 {
-	"entity.forgottencreatures.wendigo": "Wendigo"
+	"entity.forgottencreatures.wendigo": "Wendigo",
+	
+	"item.forgottencreatures.spawn_wendigo": "Spawn Wendigo",
+	
+	"item.forgottencreatures.wendigo_claw": "Wendigo Claw"
 }

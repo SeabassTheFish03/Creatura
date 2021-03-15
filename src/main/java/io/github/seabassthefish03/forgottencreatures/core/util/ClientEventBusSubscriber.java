@@ -1,7 +1,7 @@
 package io.github.seabassthefish03.forgottencreatures.core.util;
 
 import io.github.seabassthefish03.forgottencreatures.ForgottenCreatures;
-import io.github.seabassthefish03.forgottencreatures.client.render.entity.WendigoRender;
+import io.github.seabassthefish03.forgottencreatures.client.render.entity.WendigoRenderer;
 import io.github.seabassthefish03.forgottencreatures.core.init.EntityTypeInit;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -15,6 +15,6 @@ public class ClientEventBusSubscriber {
 
 	@SubscribeEvent
 	public static void clientSetup(FMLClientSetupEvent event) {
-		RenderingRegistry.registerEntityRenderingHandler(EntityTypeInit.WENDIGO.get(), WendigoRender::new);
+		RenderingRegistry.registerEntityRenderingHandler(EntityTypeInit.WENDIGO.get(), WendigoRenderer::new);
 	}
 }
