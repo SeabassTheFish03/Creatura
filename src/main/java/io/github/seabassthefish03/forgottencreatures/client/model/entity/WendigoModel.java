@@ -5,7 +5,7 @@ import io.github.seabassthefish03.forgottencreatures.common.entities.WendigoEnti
 import net.minecraft.util.ResourceLocation;
 import software.bernie.geckolib3.model.AnimatedGeoModel;
 
-public class ModelWendigo extends AnimatedGeoModel<WendigoEntity>{
+public class WendigoModel extends AnimatedGeoModel<WendigoEntity>{
 
 	@Override
 	public ResourceLocation getAnimationFileLocation(WendigoEntity animatable) {

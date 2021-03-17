@@ -3,7 +3,7 @@ package io.github.seabassthefish03.forgottencreatures.client.render.entity;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.vertex.IVertexBuilder;
 
-import io.github.seabassthefish03.forgottencreatures.client.model.entity.ModelWendigo;
+import io.github.seabassthefish03.forgottencreatures.client.model.entity.WendigoModel;
 import io.github.seabassthefish03.forgottencreatures.common.entities.WendigoEntity;
 import net.minecraft.client.renderer.IRenderTypeBuffer;
 import net.minecraft.client.renderer.RenderType;
@@ -14,7 +14,7 @@ import software.bernie.geckolib3.renderers.geo.GeoEntityRenderer;
 public class WendigoRenderer extends GeoEntityRenderer<WendigoEntity> {
 	
 	public WendigoRenderer(EntityRendererManager renderManagerIn) {
-		super(renderManagerIn, new ModelWendigo());
+		super(renderManagerIn, new WendigoModel());
 	}
 	
 	@Override
